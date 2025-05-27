@@ -580,10 +580,6 @@ app.delete(
 	}
 );
 
-// app.get("*", (request, response) => {
-// 	response.sendFile(path.join(path.resolve(), "dist/index.html"));
-// });
-
 app.listen(3000, () => {
 	console.log("Server is running on http://localhost:3000");
 });
