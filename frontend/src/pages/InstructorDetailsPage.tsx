@@ -19,8 +19,6 @@ function InstructorDetailsPage() {
 
 	const [instructor, setInstructor] = useState<Instructor | null>(null);
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	useEffect(() => {
 		fetch(`/api/instructors/${id}`)
 			.then((response) => response.json())
@@ -51,7 +49,7 @@ function InstructorDetailsPage() {
 		<section>
 			<StyledInstructorCard>
 				<img
-					src={`${backendBaseUrl}/${instructor.profile_picture}`}
+					src={`/${instructor.profile_picture}`}
 					alt={`Profile picture of instructor ${instructor.name}`}
 				/>
 
