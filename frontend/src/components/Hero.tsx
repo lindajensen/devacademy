@@ -5,7 +5,7 @@ import { StyledHeroSection, StyledActionButtons } from "./styles/Hero.styled";
 function Hero() {
 	return (
 		<StyledHeroSection>
-			<img src="/hero-img.png" alt="" />
+			<img src="/img/hero-img.png" alt="" />
 
 			<div>
 				<h1>Learn to Code. Build Your Future.</h1>
