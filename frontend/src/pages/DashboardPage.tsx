@@ -64,8 +64,6 @@ function DashboardPage() {
 
 	const navigate = useNavigate();
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	useEffect(() => {
 		const token = localStorage.getItem("authToken");
 
@@ -345,10 +343,7 @@ function DashboardPage() {
 	return (
 		<StyledDashboardContainer>
 			<StyledUserProfile>
-				<img
-					src={`${backendBaseUrl}/${user.avatar}`}
-					alt={`Avatar of ${user.name}`}
-				/>
+				<img src={`/${user.avatar}`} alt={`Avatar of ${user.name}`} />
 				<p>{user.name}</p>
 				<p>{user.email}</p>
 				<p>{user.role}</p>

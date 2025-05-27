@@ -15,8 +15,6 @@ function InstructorSpotlight() {
 	const [selectedInstructor, setSelectedInstructor] =
 		useState<Instructor | null>(null);
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	useEffect(() => {
 		fetch("/api/instructors")
 			.then((response) => response.json())
@@ -48,7 +46,7 @@ function InstructorSpotlight() {
 								$isActive={
 									selectedInstructor?.instructor_id === instructor.instructor_id
 								}
-								src={`${backendBaseUrl}/${instructor.profile_picture}`}
+								src={`/${instructor.profile_picture}`}
 								alt={`Profile picture for instructor ${instructor.name}`}
 							/>
 						</button>

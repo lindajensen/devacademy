@@ -14,8 +14,6 @@ function PopularCourses() {
 		[]
 	);
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	// FETCH POPULAR COURSES
 	useEffect(() => {
 		fetch("/api/landing-page")
@@ -40,10 +38,7 @@ function PopularCourses() {
 						<Link
 							aria-label={`View details for the course ${course.course_name}`}
 							to={`/courses/${course.course_id}`}>
-							<img
-								src={`${backendBaseUrl}/${course.thumbnail}`}
-								alt={course.course_name}
-							/>
+							<img src={`/${course.thumbnail}`} alt={course.course_name} />
 							<h3>{course.course_name}</h3>
 						</Link>
 						<Link

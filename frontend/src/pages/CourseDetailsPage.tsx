@@ -33,8 +33,6 @@ function CourseDetailsPage() {
 	const [addedToCartMessage, setAddedToCartMessage] = useState(false);
 	const [alreadyInCartMessage, setAlreadyInCartMessage] = useState(false);
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	// SCROLL WHEN LOADING COMPONENT
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -108,7 +106,7 @@ function CourseDetailsPage() {
 	return (
 		<section>
 			<StyledCourseDetailsCard>
-				<img src={`${backendBaseUrl}/${course.thumbnail}`} alt="" />
+				<img src={`/${course.thumbnail}`} alt="" />
 
 				<div className="card-wrapper">
 					<h1>{course.course_name}</h1>

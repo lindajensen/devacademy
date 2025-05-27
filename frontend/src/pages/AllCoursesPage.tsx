@@ -14,8 +14,6 @@ function AllCoursesPage() {
 		[]
 	);
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	// FETCH ALL COURSES
 	useEffect(() => {
 		fetch("/api/courses")
@@ -41,7 +39,7 @@ function AllCoursesPage() {
 						<Link
 							aria-label={`View details for the course ${course.course_name}`}
 							to={`/courses/${course.course_id}`}>
-							<img src={`${backendBaseUrl}/${course.thumbnail}`} alt="" />
+							<img src={`/${course.thumbnail}`} alt="" />
 							<h3>{course.course_name}</h3>
 						</Link>
 

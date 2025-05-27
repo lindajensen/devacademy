@@ -22,8 +22,6 @@ interface Instructor {
 function InstructorsPage() {
 	const [instructors, SetInstructors] = useState<Instructor[]>([]);
 
-	const backendBaseUrl = import.meta.env.DEV ? "http://localhost:3000" : "";
-
 	useEffect(() => {
 		fetch("/api/instructors")
 			.then((response) => response.json())
@@ -42,10 +40,7 @@ function InstructorsPage() {
 			<div>
 				{instructors.map((instructor) => (
 					<StyledInstructorCard key={instructor.instructor_id}>
-						<img
-							src={`${backendBaseUrl}/${instructor.profile_picture}`}
-							alt={instructor.name}
-						/>
+						<img src={`/${instructor.profile_picture}`} alt={instructor.name} />
 						<h2>{instructor.name}</h2>
 						<p>{instructor.focus_area}</p>
 						<p>
