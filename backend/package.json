@@ -5,7 +5,6 @@
 	"scripts": {
 		"build": "npx tsc",
 		"build-frontend": "npm run --prefix ../frontend build && rm -Rf dist && mv ../frontend/dist .",
-		"start": "node dist/index.js",
 		"dev": "concurrently \"nodemon index.js\" \"npx tsc --watch\"",
 		"lint": "eslint .",
 		"format": "prettier --write .",
