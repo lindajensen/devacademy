@@ -23,7 +23,6 @@ import {
 
 import {
 	StyledModalContent,
-	// StyledOverlay,
 	StyledIconWrapper,
 	StyledErrorMessage,
 	StyledLoginErrorMessage
@@ -301,7 +300,7 @@ function Navbar() {
 						)}
 					</form>
 					<div>
-						<p>Don't hava an account?</p>
+						<p>Don't have an account?</p>
 						<Link
 							aria-label="Create an account"
 							onClick={closeModal}

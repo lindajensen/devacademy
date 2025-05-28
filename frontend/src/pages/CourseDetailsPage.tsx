@@ -3,7 +3,11 @@ import { useState, useEffect } from "react";
 
 import StarDisplay from "../components/StarDisplay";
 
-import { Course, CourseIncludingInstructorAndRating, Review } from "../App";
+import {
+	Course,
+	CourseIncludingInstructorAndRating,
+	ReviewIncludingUsername
+} from "../App";
 
 import {
 	StyledContentFallback,
@@ -22,7 +26,7 @@ import {
 function CourseDetailsPage() {
 	const { course_id } = useParams();
 
-	const [review, setReview] = useState<Review | null>(null);
+	const [review, setReview] = useState<ReviewIncludingUsername | null>(null);
 	const [course, setCourse] =
 		useState<CourseIncludingInstructorAndRating | null>(null);
 	const [showFullDescription, setShowFullDescription] = useState(false);
@@ -43,7 +47,7 @@ function CourseDetailsPage() {
 
 		fetch(`/api/reviews/${course_id}`)
 			.then((response) => response.json())
-			.then((data: Review[]) => setReview(data[0] ?? null))
+			.then((data: ReviewIncludingUsername[]) => setReview(data[0] ?? null))
 			.catch((error: unknown) => console.log("Error loading reviews", error));
 	}, [course_id]);
 
@@ -150,6 +154,7 @@ function CourseDetailsPage() {
 									<StarDisplay rating={review.rating} />
 
 									<p>{review.comment}</p>
+									<p>- {review.user_name}</p>
 								</StyledRatingContainer>
 							</div>
 						) : (

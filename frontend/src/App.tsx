@@ -62,6 +62,10 @@ export interface Review {
 	created_at: string;
 }
 
+export interface ReviewIncludingUsername extends Review {
+	user_name: string;
+}
+
 export interface User {
 	user_id: number;
 	name: string;

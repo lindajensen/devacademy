@@ -161,6 +161,10 @@ export const StyledRatingContainer = styled.div`
 	p:nth-child(3) {
 		margin-bottom: 1rem;
 	}
+
+	p:nth-child(4) {
+		text-align: right;
+	}
 `;
 
 export const StyledNoReviewsParagraph = styled.p`
