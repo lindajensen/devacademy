@@ -1,20 +1,13 @@
-# Atttributions
+# Render Link
+https://devacademy-dmf4.onrender.com/
+
+# Attributions
 
 ## Icons
 
 ### Favicon
 
 <a target="_blank" href="https://icons8.com/icon/26124/slide-up">Slide Up</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-## Images
-
-### Misc Images
-
-Hero image
-<a href="https://www.vecteezy.com/free-vector/education">Education Vectors by Vecteezy</a>
-
-Placeholder image - popular courses
-Photo by <a href="https://unsplash.com/@altumcode?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">AltumCode</a> on <a href="https://unsplash.com/photos/turned-on-laptop-computer-dC6Pb2JdAqs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 # Sources
 
