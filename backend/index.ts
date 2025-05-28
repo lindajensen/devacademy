@@ -85,6 +85,10 @@ interface Review {
 	created_at: string;
 }
 
+interface ReviewIncludingUsername extends Review {
+	user_name: string;
+}
+
 interface User {
 	user_id: number;
 	name: string;
@@ -282,12 +286,15 @@ app.get(
 // GET specific reviews
 app.get("/api/reviews/:id", async (request: Request, response: Response) => {
 	try {
-		const result = await client.query<Review>(
+		const result = await client.query<ReviewIncludingUsername>(
 			`
-    SELECT *
-    FROM reviews
-    WHERE course_id = $1
-    `,
+		SELECT
+			reviews.*,
+			users.name AS user_name
+		FROM reviews
+		LEFT JOIN users ON reviews.user_id = users.user_id
+		WHERE reviews.course_id = $1
+		`,
 			[request.params.id]
 		);
 
