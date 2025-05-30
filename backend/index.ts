@@ -117,7 +117,7 @@ type UserPassword = Pick<User, "password">;
 
 // ROUTES ----------------------------------------------------------------------
 
-// GET popular Courses (/landingpage)
+// GET Popular Courses (/landingpage)
 app.get("/api/landing-page", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<CourseIncludingAverageRating>(
@@ -155,7 +155,7 @@ app.get("/api/landing-page", async (request: Request, response: Response) => {
 	}
 });
 
-// GET all Courses
+// GET All Courses
 app.get("/api/courses", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<CourseIncludingAverageRating>(`
@@ -192,7 +192,7 @@ app.get("/api/courses", async (request: Request, response: Response) => {
 	}
 });
 
-// GET specific course
+// GET Specific Course
 app.get("/api/courses/:id", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<CourseIncludingAverageRating>(
@@ -238,7 +238,7 @@ app.get("/api/courses/:id", async (request: Request, response: Response) => {
 	}
 });
 
-// GET All instructors
+// GET All Instructors
 app.get("/api/instructors", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<Instructor>(`
@@ -255,7 +255,7 @@ app.get("/api/instructors", async (request: Request, response: Response) => {
 	}
 });
 
-// GET specific instructor
+// GET Specific Instructor
 app.get(
 	"/api/instructors/:id",
 	async (request: Request, response: Response) => {
@@ -283,7 +283,7 @@ app.get(
 	}
 );
 
-// GET specific reviews
+// GET Specific Reviews
 app.get("/api/reviews/:id", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<ReviewIncludingUsername>(
@@ -307,7 +307,7 @@ app.get("/api/reviews/:id", async (request: Request, response: Response) => {
 	}
 });
 
-// GET specific user page
+// GET Specific User Page
 app.get(
 	"/api/dashboard/:id",
 	verifyToken,
@@ -360,7 +360,7 @@ app.get(
 	}
 );
 
-// Create new user account (POST)
+// Create New User Account (POST)
 app.post("/api/signup", async (request: Request, response: Response) => {
 	try {
 		const checkUser = await client.query<UserEmail>(
@@ -392,7 +392,7 @@ app.post("/api/signup", async (request: Request, response: Response) => {
 	}
 });
 
-// POST review
+// POST Review
 app.post("/api/reviews", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<Review>(
@@ -436,7 +436,7 @@ app.post("/api/reviews", async (request: Request, response: Response) => {
 	}
 });
 
-// Sign in (POST)
+// Sign In (POST)
 app.post("/api/signin", async (request: Request, response: Response) => {
 	try {
 		const result = await client.query<User>(
@@ -480,7 +480,7 @@ app.post("/api/signin", async (request: Request, response: Response) => {
 	}
 });
 
-// Change email (PATCH)
+// Change Email (PATCH)
 app.patch(
 	"/api/account/email",
 	verifyToken,
@@ -520,7 +520,7 @@ app.patch(
 	}
 );
 
-// Change password (PATCH)
+// Change Password (PATCH)
 app.patch(
 	"/api/account/password",
 	verifyToken,
