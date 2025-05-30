@@ -50,6 +50,7 @@ export const StyledCourseCard = styled.div`
 	h3 {
 		font-size: 1rem;
 		margin: 0.5rem 0;
+		line-height: 1.6;
 	}
 
 	img {
