@@ -79,6 +79,7 @@ function CertificatePage() {
 				.save()
 				.then(() => {
 					window.close();
+					// navigate(`/dashboard/${user.user_id}`);
 				});
 		}
 	}, [autoDownload, course, user, hasDownloaded, navigate]);
