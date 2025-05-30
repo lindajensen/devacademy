@@ -91,6 +91,7 @@ function Navbar() {
 			setIsLoggedIn(false);
 			setIsOpen(false);
 			localStorage.removeItem("authToken");
+			localStorage.removeItem("userId");
 			navigate("/");
 		} else {
 			openModal();
