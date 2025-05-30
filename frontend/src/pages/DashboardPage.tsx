@@ -176,8 +176,8 @@ function DashboardPage() {
 
 	// DOWNLOAD CERTIFICATE
 	function handleDownloadCertificate(id: number) {
-		// navigate(`/certificate/${id}?autodownload=true`);
-		window.open(`/certificate/${id}?autodownload=true`, "_blank");
+		navigate(`/certificate/${id}?autodownload=true`);
+		// window.open(`/certificate/${id}?autodownload=true`, "_blank");
 	}
 
 	// UPDATE EMAIL
