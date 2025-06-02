@@ -12,8 +12,8 @@ function HomePage() {
 			<PopularCourses />
 			<HowItWorks />
 			<InstructorSpotlight />
-			<Testimonials />
 			<Banner />
+			<Testimonials />
 		</>
 	);
 }
